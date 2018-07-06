@@ -11,12 +11,17 @@
 
 <ion-content padding>
   <ion-refresher (ionRefresh) ="clearCache($event)">
-    <ion-refresher-content></ion-refresher-content>
+      <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
   </ion-refresher>
   <ion-list>
     <ion-item *ngFor = "let user of users">
       <ion-avatar>
-        <img-loader [src] = "user?.picture?.large" useImg (load)="onImageLoad($event)"></img-loader>
+        <img-loader [src] = "user?.picture?.large"   useImg (load)="onImageLoad($event)"></img-loader>
       </ion-avatar>
       <h2>{{ user.email }}</h2>
     </ion-item>
