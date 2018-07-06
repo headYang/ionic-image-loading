@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color = "primary">
     <ion-title>
-      Ionic Image Loading
+      Ionic Image Loading / Dynamic template
     </ion-title>
     <ion-buttons end>
       <button ion-button (click) = "loadData()">Load</button>
@@ -14,10 +14,15 @@
       <ion-refresher-content
       pullingIcon="arrow-dropdown"
       pullingText="Pull to refresh"
-      
+      refreshingSpinner="circles"
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
+  <ion-slides>
+    <div #processContainer>
+
+    </div>
+  </ion-slides>
   <ion-list>
     <ion-item *ngFor = "let user of users">
       <ion-avatar>
